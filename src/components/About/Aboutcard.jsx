@@ -14,6 +14,11 @@ function AboutCard() {
             I am currently a Third year undergrad at NIT Jalandhar pursuing
             Bachelor of Technology in Computer Science and Engineering.
             <br />
+            I am currently exploring the exciting world of{" "}
+            <span className="purple">Artificial Intelligence</span> and{" "}
+            <span className="purple">Machine Learning</span>, expanding my
+            skills beyond web development.
+            <br />
             <br />
             Apart from coding, some other activities that I love to do!
           </p>

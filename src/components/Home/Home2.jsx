@@ -1,11 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar3.jpg";
+import myImg from "../../assets/avatar3.jpg";
 import Tilt from "react-parallax-tilt";
 import Typee from "./Typee";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -32,7 +31,7 @@ function Home2() {
               <br />
               My fields of interest are building new &nbsp;
               <i>
-                <b className="purple">Web Applications and games</b> and 
+                <b className="purple">Web Applications and games</b> and
                 am also passionate about<b className="purple"> solving problems</b> <b>using Data Structures and Algorithms (DSA).</b>
               </i>
               <br />
@@ -49,7 +48,9 @@ function Home2() {
                 <b className="purple"> React.js and Next.js</b>
               </i>
               , constantly seeking to expand my skill set and tackle new
-              challenges.
+              challenges. I am currently exploring{" "}
+              <b className="purple">AI & Machine Learning</b>
+              , diving into the world of intelligent systems.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

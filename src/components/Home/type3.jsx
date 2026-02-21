@@ -5,7 +5,7 @@ function Type3() {
   return (
     <Typewriter
       options={{
-        strings: ["To view compelete resume"],
+        strings: ["To view complete resume"],
         autoStart: true,
         // loop: true,
         deleteSpeed: 40,

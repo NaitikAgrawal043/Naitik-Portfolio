@@ -1,8 +1,7 @@
 {
-  "name": "naitik-porfolio",
+  "name": "naitik-portfolio",
   "private": true,
   "version": "0.0.0",
- 
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,10 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.12",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
-    "bootstrap": "^5.3.7",
+    "bootstrap": "^5.3.8",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^18.3.1",
@@ -23,7 +21,6 @@
     "react-parallax-tilt": "^1.7.304",
     "react-pdf": "^10.1.0",
     "react-router-dom": "^6.30.1",
-    "tailwindcss": "^4.1.12",
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {

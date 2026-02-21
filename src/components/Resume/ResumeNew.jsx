@@ -1,30 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
-import pdf from "../../Assets/resumenew.pdf";
-import { AiOutlineDownload } from "react-icons/ai";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { Document, Page, pdfjs } from "react-pdf";
-//import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
+import { AiOutlineDownload } from "react-icons/ai";
+import Particle from "../Particle";
 import Type3 from "../Home/type3";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
+// Worker setup matching react-pdf v10 (pdfjs-dist v5.3.93)
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
+
+// PDF from public folder
+const pdf = "./ResumeNaitik961.pdf";
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const scale = width > 786 ? 1.7 : 0.6;
 
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
+
+        {/* Top download button + typing animation */}
         <Row
           style={{
             justifyContent: "center",
             position: "relative",
             gap: "10px",
+            marginBottom: "20px",
           }}
         >
           <Col md="auto" className="d-flex align-items-center">
@@ -34,34 +45,41 @@ function ResumeNew() {
               target="_blank"
               style={{ maxWidth: "200px", marginRight: "10px" }}
             >
-              <AiOutlineDownload />
-              &nbsp;Download CV
+              <AiOutlineDownload style={{ marginRight: "5px" }} />
+              Download CV
             </Button>
             <Type3 />
           </Col>
         </Row>
 
+        {/* PDF viewer with error handling */}
         <Row className="resume d-flex justify-content-center">
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+          <Document
+            file={pdf}
+            onLoadError={(error) => console.error("Load error:", error)}
+            onSourceError={(error) => console.error("Source error:", error)}
+          >
+            <Page pageNumber={1} scale={scale} />
           </Document>
         </Row>
 
+        {/* Bottom download button */}
         <Row
           style={{
             justifyContent: "center",
             position: "relative",
             gap: "10px",
+            marginTop: "20px",
           }}
         >
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px", marginRight: "10px" }}
+            style={{ maxWidth: "250px" }}
           >
-            <AiOutlineDownload />
-            &nbsp;Download CV
+            <AiOutlineDownload style={{ marginRight: "5px" }} />
+            Download CV
           </Button>
         </Row>
       </Container>

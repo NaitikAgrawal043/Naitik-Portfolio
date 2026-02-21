@@ -1,17 +1,99 @@
 html {
-  --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
-  );
+  --section-background-color: linear-gradient(to bottom left,
+      rgba(17, 16, 16, 0.582),
+      rgba(12, 8, 24, 0.904));
 
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
-  );
+  --image-gradient: linear-gradient(to bottom left,
+      rgba(17, 16, 16, 0.678),
+      rgba(12, 10, 22, 0.863));
 
   --imp-text-color: #c770f0;
+}
+
+/* --------- */
+/* Custom Cursor */
+/* --------- */
+* {
+  cursor: none !important;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+blockquote,
+label {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #c770f0, #6e45e2, #88d3ce);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999998;
+  transition: transform 0.08s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    background 0.4s ease;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px rgba(199, 112, 240, 0.6),
+    0 0 20px rgba(110, 69, 226, 0.3);
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999997;
+  transition: width 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    height 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    opacity 0.4s ease,
+    background 0.4s ease;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, rgba(199, 112, 240, 0.08), rgba(110, 69, 226, 0.05), rgba(136, 211, 206, 0.03)) padding-box,
+    linear-gradient(135deg, #c770f0, #6e45e2, #88d3ce) border-box;
+  box-shadow: 0 0 12px rgba(199, 112, 240, 0.15);
+  mix-blend-mode: difference;
+}
+
+.cursor-dot.cursor-hover {
+  transform: translate(-50%, -50%) scale(2);
+  background: linear-gradient(135deg, #88d3ce, #6e45e2, #c770f0);
+  box-shadow: 0 0 14px rgba(136, 211, 206, 0.7),
+    0 0 30px rgba(110, 69, 226, 0.4);
+}
+
+.cursor-ring.cursor-hover {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, rgba(136, 211, 206, 0.1), rgba(110, 69, 226, 0.08)) padding-box,
+    linear-gradient(135deg, #88d3ce, #6e45e2, #c770f0) border-box;
+  box-shadow: 0 0 20px rgba(136, 211, 206, 0.25);
+}
+
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
 }
 
 .purple {
@@ -96,7 +178,7 @@ button:focus {
 }
 
 .navbar-toggler span {
-  display: block ;
+  display: block;
   background-color: #be50f4 !important;
   height: 4px !important;
   width: 27px !important;
@@ -146,10 +228,12 @@ button:focus {
     font-size: 1.4rem !important;
     background-color: #181a27 !important;
   }
+
   .navbar-nav .nav-item a::after {
     display: none !important;
   }
 }
+
 .navbar-brand {
   color: rgb(250, 250, 250) !important;
 }
@@ -209,10 +293,14 @@ button:focus {
 /* Home section */
 /* --------- */
 .wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.1s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  animation-name: wave-animation;
+  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s;
+  /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+  /* Never stop waving :) */
+  transform-origin: 70% 70%;
+  /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
@@ -220,28 +308,38 @@ button:focus {
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
+  }
+
+  /* The following five values can be played with to make the waving more or less extreme */
   20% {
     transform: rotate(-8deg);
   }
+
   30% {
     transform: rotate(14deg);
   }
+
   40% {
     transform: rotate(-4deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
+
   60% {
     transform: rotate(0deg);
-  } /* Reset for the last half to pause */
+  }
+
+  /* Reset for the last half to pause */
   100% {
     transform: rotate(0deg);
   }
 }
+
 #tsparticles {
   position: fixed !important;
   background-repeat: no-repeat !important;
@@ -289,6 +387,7 @@ button:focus {
   color: #be6adf !important;
   font-weight: 600 !important;
 }
+
 .Typewriter__cursor {
   font-size: 2.4em !important;
   color: #b562d6 !important;
@@ -300,6 +399,7 @@ button:focus {
     font-weight: 500 !important;
     position: absolute !important;
   }
+
   .Typewriter__cursor {
     display: none !important;
   }
@@ -405,8 +505,9 @@ button:focus {
   background-color: rgb(10, 4, 22);
   bottom: 0 !important;
   padding-top: 10px !important;
-  padding-bottom: 8px !important ;
+  padding-bottom: 8px !important;
 }
+
 .footer-copywright {
   text-align: center !important;
 }
@@ -432,6 +533,7 @@ button:focus {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
+
 .footer-icons {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
@@ -441,6 +543,7 @@ button:focus {
 .blockquote-footer {
   color: #a588c0 !important;
 }
+
 /* --------- */
 /* Projects */
 /* --------- */
@@ -467,6 +570,7 @@ button:focus {
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
+
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
@@ -527,10 +631,12 @@ button:focus {
   background-color: #6d20c5d7 !important;
   border-color: #6d20c5d7 !important;
 }
+
 .btn:focus {
   outline: none !important;
   box-shadow: none !important;
 }
+
 .project-heading {
   color: white !important;
   font-size: 2.3em !important;
@@ -576,6 +682,7 @@ button:focus {
   overflow: hidden !important;
   border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
 }
+
 .tech-icon-images {
   padding: 20px !important;
   line-height: 1.6 !important;
@@ -598,6 +705,7 @@ button:focus {
     padding-top: 0 !important;
   }
 }
+
 /* --------- */
 /* Resume */
 /* --------- */
@@ -635,6 +743,7 @@ button:focus {
     padding-left: 15px !important;
   }
 }
+
 .resume .resume-title {
   font-size: 2em;
   font-weight: 700;
@@ -711,10 +820,12 @@ button:focus {
   animation-fill-mode: forwards;
   animation-duration: 0.85s;
 }
+
 @keyframes likeAnimation {
   0% {
     transform: scale(1.5);
   }
+
   100% {
     transform: scale(1);
   }
@@ -738,6 +849,7 @@ button:focus {
   background-color: #a24dd386 !important;
   border-color: #a24dd386 !important;
 }
+
 .fork-btn-inner::after {
   display: none !important;
 }
