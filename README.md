@@ -33,6 +33,4 @@ cd Naitik-Portfolio
 npm install
 npm start
 
-If you want, I can also **make a visually richer README** with **screenshots, badges, and GitHub workflow links** to make your portfolio stand out more.  
 
-Do you want me to do that next?
