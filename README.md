@@ -2,10 +2,6 @@
 
 A fully responsive portfolio website built using **React.js** and **Bootstrap** to showcase skills, projects, and achievements.
 
-## Demo
-
-You can view the live project [here](#) *(replace # with live URL if hosted, e.g., on GitHub Pages, Vercel, or Netlify)*
-
 ## Features
 
 - Fully responsive design for desktop, tablet, and mobile devices.
