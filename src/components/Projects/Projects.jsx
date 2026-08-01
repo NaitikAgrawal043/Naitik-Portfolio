@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
+import puneAuthorsImage from "../../assets/Projects/puneAuthors.png";
 import portfolioImage from "../../assets/tripwise.jpg";
 import notesAppImage from "../../assets/Projects/notesTaking.png";
 import tripwiseImage from "../../assets/Projects/tripwise.png";
 import quizAppImage from "../../assets/Projects/image.png";
-// import studyHub from "../../Assets/Projects/studyHub.png";
-// import collab from "../../Assets/Projects/collab.png";
+
 function Projects() {
   return (
     <Container fluid className="project-section">
@@ -20,6 +20,16 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={puneAuthorsImage}
+              isBlog={false}
+              title="Pune Authors Association"
+              description="A full-stack e-commerce platform for authors to list and sell books, event management with automated PDF catalogue generation, live Point-of-Sale (POS) system, and role-based admin dashboard with real-time sales analytics."
+              ghLink="https://github.com/NaitikAgrawal043/pune-authors-app"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={tripwiseImage}
@@ -47,7 +57,7 @@ function Projects() {
               title="Portfolio Website"
               description="A fully responsive portfolio website showcasing skills and projects, featuring smooth navigation and dynamic contact section."
               ghLink="https://github.com/NaitikAgrawal043"
-              demoLink="https://naitikagrawal043.github.io/Portfolio-website/"
+              demoLink="https://naitikagrawalprofile.netlify.app/#/"
             />
           </Col>
 
