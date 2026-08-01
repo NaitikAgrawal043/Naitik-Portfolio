@@ -1,8 +1,8 @@
-import React, { useCallback } from "react";
+import React, { useCallback, memo } from "react";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-function Particle() {
+const Particle = memo(function Particle() {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
@@ -14,29 +14,24 @@ function Particle() {
       options={{
         particles: {
           number: {
-            value: 160,
+            value: 70,
             density: {
               enable: true,
-              area: 1500,
+              area: 1200,
             },
           },
           links: {
             enable: false,
-            opacity: 0.03,
           },
           move: {
             direction: "right",
-            speed: 0.05,
+            speed: 0.2,
           },
           size: {
-            value: 1,
+            value: 1.2,
           },
           opacity: {
-            animation: {
-              enable: true,
-              speed: 1,
-              minimumValue: 0.05,
-            },
+            value: 0.35,
           },
         },
         interactivity: {
@@ -56,6 +51,6 @@ function Particle() {
       }}
     />
   );
-}
+});
 
 export default Particle;

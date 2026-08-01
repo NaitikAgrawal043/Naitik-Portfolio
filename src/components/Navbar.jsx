@@ -22,13 +22,10 @@ function NavBar() {
 
   useEffect(() => {
     function scrollHandler() {
-      if (window.scrollY >= 20) {
-        updateNavbar(true);
-      } else {
-        updateNavbar(false);
-      }
+      const isSticky = window.scrollY >= 20;
+      updateNavbar((prev) => (prev !== isSticky ? isSticky : prev));
     }
-    window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("scroll", scrollHandler, { passive: true });
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 

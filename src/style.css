@@ -34,6 +34,8 @@ label {
 .cursor-dot {
   width: 10px;
   height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
   background: linear-gradient(135deg, #c770f0, #6e45e2, #88d3ce);
   border-radius: 50%;
   position: fixed;
@@ -41,9 +43,7 @@ label {
   left: 0;
   pointer-events: none;
   z-index: 999998;
-  transition: transform 0.08s cubic-bezier(0.18, 0.89, 0.32, 1.28),
-    background 0.4s ease;
-  transform: translate(-50%, -50%);
+  will-change: transform;
   box-shadow: 0 0 8px rgba(199, 112, 240, 0.6),
     0 0 20px rgba(110, 69, 226, 0.3);
   mix-blend-mode: difference;
@@ -52,6 +52,8 @@ label {
 .cursor-ring {
   width: 40px;
   height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
   border: 2px solid transparent;
   border-radius: 50%;
   position: fixed;
@@ -59,11 +61,8 @@ label {
   left: 0;
   pointer-events: none;
   z-index: 999997;
-  transition: width 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28),
-    height 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28),
-    opacity 0.4s ease,
-    background 0.4s ease;
-  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, background 0.3s ease;
   background: linear-gradient(135deg, rgba(199, 112, 240, 0.08), rgba(110, 69, 226, 0.05), rgba(136, 211, 206, 0.03)) padding-box,
     linear-gradient(135deg, #c770f0, #6e45e2, #88d3ce) border-box;
   box-shadow: 0 0 12px rgba(199, 112, 240, 0.15);
@@ -71,7 +70,6 @@ label {
 }
 
 .cursor-dot.cursor-hover {
-  transform: translate(-50%, -50%) scale(2);
   background: linear-gradient(135deg, #88d3ce, #6e45e2, #c770f0);
   box-shadow: 0 0 14px rgba(136, 211, 206, 0.7),
     0 0 30px rgba(110, 69, 226, 0.4);
@@ -80,6 +78,8 @@ label {
 .cursor-ring.cursor-hover {
   width: 55px;
   height: 55px;
+  margin-left: -27.5px;
+  margin-top: -27.5px;
   background: linear-gradient(135deg, rgba(136, 211, 206, 0.1), rgba(110, 69, 226, 0.08)) padding-box,
     linear-gradient(135deg, #88d3ce, #6e45e2, #c770f0) border-box;
   box-shadow: 0 0 20px rgba(136, 211, 206, 0.25);

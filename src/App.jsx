@@ -22,58 +22,57 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Custom cursor logic
+  // Custom cursor logic (hardware-accelerated, leak-free)
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
+    if (window.matchMedia("(max-width: 768px)").matches) return;
+
+    let mouseX = -100, mouseY = -100;
+    let ringX = -100, ringY = -100;
     let animationId;
 
     const moveCursor = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      dot.style.left = mouseX + "px";
-      dot.style.top = mouseY + "px";
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     };
 
     const animateRing = () => {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
-      ring.style.left = ringX + "px";
-      ring.style.top = ringY + "px";
+      ringX += (mouseX - ringX) * 0.2;
+      ringY += (mouseY - ringY) * 0.2;
+      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
       animationId = requestAnimationFrame(animateRing);
     };
     animationId = requestAnimationFrame(animateRing);
 
-    const addHover = () => {
-      dot.classList.add("cursor-hover");
-      ring.classList.add("cursor-hover");
-    };
-    const removeHover = () => {
-      dot.classList.remove("cursor-hover");
-      ring.classList.remove("cursor-hover");
+    const handleMouseOver = (e) => {
+      if (e.target.closest("a, button, .nav-link, .project-card-view, .tech-icons, .social-icons")) {
+        dot.classList.add("cursor-hover");
+        ring.classList.add("cursor-hover");
+      }
     };
 
-    window.addEventListener("mousemove", moveCursor);
+    const handleMouseOut = (e) => {
+      if (e.target.closest("a, button, .nav-link, .project-card-view, .tech-icons, .social-icons")) {
+        dot.classList.remove("cursor-hover");
+        ring.classList.remove("cursor-hover");
+      }
+    };
 
-    const hoverTargets = document.querySelectorAll("a, button, .nav-link, .project-card-view, .tech-icons, .social-icons");
-    hoverTargets.forEach((el) => {
-      el.addEventListener("mouseenter", addHover);
-      el.addEventListener("mouseleave", removeHover);
-    });
+    window.addEventListener("mousemove", moveCursor, { passive: true });
+    document.addEventListener("mouseover", handleMouseOver, { passive: true });
+    document.addEventListener("mouseout", handleMouseOut, { passive: true });
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
       cancelAnimationFrame(animationId);
-      hoverTargets.forEach((el) => {
-        el.removeEventListener("mouseenter", addHover);
-        el.removeEventListener("mouseleave", removeHover);
-      });
     };
-  });
+  }, []);
 
   return (
     <Router>
