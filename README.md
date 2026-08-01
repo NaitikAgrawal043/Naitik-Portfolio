@@ -2,6 +2,10 @@
 
 A fully responsive portfolio website built using **React.js** and **Bootstrap** to showcase skills, projects, and achievements.
 
+## 🚀 Live Demo
+
+🌐 **Live Demo:** [https://naitikagrawalprofile.netlify.app/#/](https://naitikagrawalprofile.netlify.app/#/)
+
 ## Features
 
 - Fully responsive design for desktop, tablet, and mobile devices.
