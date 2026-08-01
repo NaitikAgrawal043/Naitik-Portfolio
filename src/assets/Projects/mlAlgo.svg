@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="#181124" rx="8"/>
+  <rect x="12" y="12" width="576" height="376" rx="8" stroke="#6b21a8" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+  <path d="M260 160L300 120L340 160M300 120V240" stroke="#c084fc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="260" cy="160" r="8" fill="#a855f7"/>
+  <circle cx="340" cy="160" r="8" fill="#a855f7"/>
+  <circle cx="300" cy="240" r="8" fill="#a855f7"/>
+  <text x="300" y="280" fill="#e9d5ff" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" text-anchor="middle">ML Algo Learner</text>
+  <text x="300" y="308" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle">Interactive Machine Learning Algorithms</text>
+</svg>

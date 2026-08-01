@@ -7,6 +7,7 @@ import portfolioImage from "../../assets/tripwise.jpg";
 import notesAppImage from "../../assets/Projects/notesTaking.png";
 import tripwiseImage from "../../assets/Projects/tripwise.png";
 import quizAppImage from "../../assets/Projects/image.png";
+import mlAlgoImage from "../../assets/Projects/mlAlgo.svg";
 
 function Projects() {
   return (
@@ -38,6 +39,16 @@ function Projects() {
               title="Quiz Web App"
               description="A full-stack quiz application with real-time test synchronization, admin control panel, student interface, result tracking, and live instructor-led assessments built with React and Node.js."
               ghLink="https://github.com/NaitikAgrawal043/Quizz"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={mlAlgoImage}
+              isBlog={false}
+              title="ML Algo Learner"
+              description="An interactive web application designed for learning, visualizing, and experimenting with key Machine Learning algorithms and model concepts."
+              ghLink="https://github.com/NaitikAgrawal043/ML_Algo_Learner"
             />
           </Col>
 
