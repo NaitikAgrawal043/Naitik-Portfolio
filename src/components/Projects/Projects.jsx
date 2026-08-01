@@ -33,21 +33,21 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={tripwiseImage}
-              isBlog={false}
-              title="TripWise - Travel Website"
-              description="A fully responsive travel website showcasing global destinations with interactive UI, animated cards, and dynamic travel quotes."
-              ghLink="https://github.com/NaitikAgrawal043"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
               imgPath={quizAppImage}
               isBlog={false}
               title="Quiz Web App"
               description="A full-stack quiz application with real-time test synchronization, admin control panel, student interface, result tracking, and live instructor-led assessments built with React and Node.js."
               ghLink="https://github.com/NaitikAgrawal043/Quizz"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={tripwiseImage}
+              isBlog={false}
+              title="TripWise - Travel Website"
+              description="A fully responsive travel website showcasing global destinations with interactive UI, animated cards, and dynamic travel quotes."
+              ghLink="https://github.com/NaitikAgrawal043"
             />
           </Col>
 
