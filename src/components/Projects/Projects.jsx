@@ -25,8 +25,9 @@ function Projects() {
               imgPath={puneAuthorsImage}
               isBlog={false}
               title="Pune Authors Association"
-              description="A full-stack e-commerce platform for authors to list and sell books, event management with automated PDF catalogue generation, live Point-of-Sale (POS) system, and role-based admin dashboard with real-time sales analytics."
+              description="A full-stack e-commerce platform for authors to list & sell books with event management, PDF catalogue generation, POS system, and admin analytics."
               ghLink="https://github.com/NaitikAgrawal043/pune-authors-app"
+              demoLink="https://puneauthorsassociation.com/"
             />
           </Col>
 
