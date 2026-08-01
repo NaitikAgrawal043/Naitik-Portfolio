@@ -22,7 +22,7 @@ function ResumeNew() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const scale = width > 786 ? 1.7 : 0.6;
+  const scale = width > 1200 ? 1.7 : width > 786 ? 1.4 : width > 500 ? 0.9 : 0.6;
 
   return (
     <div>
@@ -38,12 +38,14 @@ function ResumeNew() {
             marginBottom: "20px",
           }}
         >
-          <Col md="auto" className="d-flex align-items-center">
+          <Col md="auto" className="d-flex align-items-center flex-wrap justify-content-center">
             <Button
               variant="primary"
               href={pdf}
+              download="Naitik_Agrawal_Resume.pdf"
               target="_blank"
-              style={{ maxWidth: "200px", marginRight: "10px" }}
+              rel="noopener noreferrer"
+              style={{ maxWidth: "250px", marginRight: "10px" }}
             >
               <AiOutlineDownload style={{ marginRight: "5px" }} />
               Download CV
@@ -52,14 +54,20 @@ function ResumeNew() {
           </Col>
         </Row>
 
-        {/* PDF viewer with error handling */}
+        {/* PDF viewer with clean rendering */}
         <Row className="resume d-flex justify-content-center">
           <Document
             file={pdf}
             onLoadError={(error) => console.error("Load error:", error)}
             onSourceError={(error) => console.error("Source error:", error)}
+            className="d-flex justify-content-center flex-column align-items-center"
           >
-            <Page pageNumber={1} scale={scale} />
+            <Page
+              pageNumber={1}
+              scale={scale}
+              renderTextLayer={false}
+              renderAnnotationLayer={false}
+            />
           </Document>
         </Row>
 
@@ -75,7 +83,9 @@ function ResumeNew() {
           <Button
             variant="primary"
             href={pdf}
+            download="Naitik_Agrawal_Resume.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload style={{ marginRight: "5px" }} />
