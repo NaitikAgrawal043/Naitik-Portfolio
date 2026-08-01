@@ -31,7 +31,7 @@ function Home2() {
               <br />
               My fields of interest are building new &nbsp;
               <i>
-                <b className="purple">Web Applications and games</b> and
+                <b className="purple">Web Applications</b> and
                 am also passionate about<b className="purple"> solving problems</b> <b>using Data Structures and Algorithms (DSA).</b>
               </i>
               <br />
